@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hommage à Maman Toussi Berthe | 1955-2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bam-red: #8B0000;
+            --bam-blue: #1A237E;
+            --bam-gold: #D4AF37;
+            --bam-brown: #5D4037;
+            --bam-beige: #F5F1E6;
+            --bam-black: #1A1A1A;
+            --bam-pattern: #8B7355;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background-color: var(--bam-beige);
+            color: var(--bam-black);
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(139, 0, 0, 0.03) 0%, transparent 55%),
+                radial-gradient(circle at 75% 75%, rgba(26, 35, 126, 0.03) 0%, transparent 55%);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, var(--bam-brown) 0%, var(--bam-red) 100%);
+            color: white;
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            border-bottom: 4px solid var(--bam-gold);
+            background-image: 
+                linear-gradient(45deg, transparent 45%, rgba(212, 175, 55, 0.1) 46%, rgba(212, 175, 55, 0.1) 54%, transparent 55%),
+                linear-gradient(-45deg, transparent 45%, rgba(212, 175, 55, 0.1) 46%, rgba(212, 175, 55, 0.1) 54%, transparent 55%);
+            background-size: 20px 20px;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .logo i {
+            color: var(--bam-gold);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-links a:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: var(--bam-gold);
+            transition: left 0.3s;
+        }
+
+        .nav-links a:hover:before,
+        .nav-links a.active:before {
+            left: 0;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(212, 175, 55, 0.2);
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: white;
+        }
+
+        /* En-tête */
+        header {
+            margin-top: 70px;
+            background: linear-gradient(rgba(90, 64, 55, 0.85), rgba(139, 0, 0, 0.85)), 
+                        url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header-content .dates {
+            font-size: 2rem;
+            color: var(--bam-gold);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .header-content .verse {
+            font-style: italic;
+            font-size: 1.6rem;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: rgba(26, 35, 126, 0.7);
+            border-radius: 15px;
+            border-left: 5px solid var(--bam-gold);
+            animation: fadeInUp 1s ease-out 0.4s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content .verse:before {
+            content: '✝';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 3rem;
+            opacity: 0.1;
+            color: var(--bam-gold);
+        }
+
+        /* Sections générales */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            color: var(--bam-red);
+            display: inline-block;
+            padding: 0 2rem;
+            background: var(--bam-beige);
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--bam-gold), var(--bam-blue));
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .section-title i {
+            color: var(--bam-brown);
+            margin-right: 10px;
+        }
+
+        /* Cartes */
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-top: 5px solid var(--bam-blue);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--bam-gold), transparent);
+        }
+
+        .card h3 {
+            color: var(--bam-brown);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+        }
+
+        .card h3 i {
+            color: var(--bam-red);
+            font-size: 1.5rem;
+        }
+
+        .card-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .card-content ul {
+            list-style-position: inside;
+            margin-left: 1rem;
+        }
+
+        .card-content li {
+            margin-bottom: 0.8rem;
+            padding-left: 1rem;
+        }
+
+        .card-content li:before {
+            content: '•';
+            color: var(--bam-red);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        /* Grille pour partenaires */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .partner-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            border: 2px solid rgba(139, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .partner-card:hover {
+            border-color: var(--bam-red);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(139, 0, 0, 0.1);
+        }
+
+        .partner-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--bam-gold), var(--bam-blue));
+        }
+
+        .partner-card i {
+            font-size: 2.5rem;
+            color: var(--bam-blue);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .partner-card h4 {
+            color: var(--bam-brown);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* Programme */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 2rem 0;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--bam-red), var(--bam-blue));
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+            width: 45%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--bam-red);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            border-left: none;
+            border-right: 5px solid var(--bam-blue);
+        }
+
+        .timeline-content:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 40%, rgba(212, 175, 55, 0.05) 50%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .timeline-content h3 {
+            color: var(--bam-brown);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid rgba(139, 0, 0, 0.1);
+            padding-bottom: 0.5rem;
+        }
+
+        .time {
+            font-weight: bold;
+            color: var(--bam-red);
+            display: block;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            background: rgba(139, 0, 0, 0.05);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        /* Témoignages spéciaux */
+        .testimonial-card {
+            background: linear-gradient(135deg, #f9f3e9 0%, #fff8f0 100%);
+            border-left: 6px solid var(--bam-gold);
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            border-radius: 0 15px 15px 0;
+            box-shadow: 5px 5px 20px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 8rem;
+            color: rgba(212, 175, 55, 0.2);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--bam-brown);
+            margin-top: 1.5rem;
+            font-style: italic;
+            text-align: right;
+            border-top: 1px solid rgba(139, 0, 0, 0.1);
+            padding-top: 1rem;
+        }
+
+        .testimonial-author:before {
+            content: '— ';
+        }
+
+        .banner-text {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.9), rgba(26, 35, 126, 0.9));
+            color: white;
+            border-radius: 15px;
+            margin: 3rem 0;
+            line-height: 1.8;
+            border: 2px solid var(--bam-gold);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Carte */
+        .map-container {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+            border: 1px solid rgba(139, 0, 0, 0.1);
+        }
+
+        .map-header {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--bam-brown), var(--bam-red));
+            color: white;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .map-placeholder {
+            height: 400px;
+            background: linear-gradient(45deg, #f0e6d6 25%, #f9f3e9 25%, #f9f3e9 50%, #f0e6d6 50%, #f0e6d6 75%, #f9f3e9 75%);
+            background-size: 40px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bam-brown);
+            font-size: 1.2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-placeholder:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(90deg, transparent 49%, rgba(139, 0, 0, 0.1) 50%, transparent 51%),
+                linear-gradient(0deg, transparent 49%, rgba(139, 0, 0, 0.1) 50%, transparent 51%);
+            background-size: 40px 40px;
+        }
+
+        .map-placeholder i {
+            font-size: 4rem;
+            color: var(--bam-red);
+            margin-bottom: 1rem;
+            display: block;
+            z-index: 2;
+        }
+
+        .map-info {
+            padding: 2rem;
+            background: linear-gradient(to bottom, #f8f4e9, #fff);
+            border-top: 1px solid #eee;
+        }
+
+        .location-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid var(--bam-blue);
+            transition: all 0.3s;
+        }
+
+        .location-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .location-item i {
+            color: var(--bam-red);
+            font-size: 1.5rem;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+
+        .location-text strong {
+            color: var(--bam-brown);
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--bam-black) 0%, var(--bam-brown) 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+            border-top: 5px solid var(--bam-gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background-image: 
+                linear-gradient(45deg, transparent 45%, rgba(212, 175, 55, 0.05) 46%, rgba(212, 175, 55, 0.05) 54%, transparent 55%),
+                linear-gradient(-45deg, transparent 45%, rgba(212, 175, 55, 0.05) 46%, rgba(212, 175, 55, 0.05) 54%, transparent 55%);
+            background-size: 30px 30px;
+            pointer-events: none;
+        }
+
+        .footer-logo {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-logo i {
+            color: var(--bam-gold);
+            margin-right: 15px;
+        }
+
+        .footer-dates {
+            font-size: 1.3rem;
+            color: var(--bam-gold);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-quote {
+            font-style: italic;
+            max-width: 600px;
+            margin: 2rem auto;
+            color: #ddd;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            position: relative;
+            z-index: 2;
+            padding: 1.5rem;
+            background: rgba(0,0,0,0.2);
+            border-radius: 10px;
+            border-left: 3px solid var(--bam-gold);
+        }
+
+        .family-names {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .family-name {
+            padding: 0.5rem 1.5rem;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .header-content h1 { font-size: 3.5rem; }
+        }
+
+        @media (max-width: 992px) {
+            .header-content h1 { font-size: 3rem; }
+            .header-content .dates { font-size: 1.8rem; }
+            .section-title h2 { font-size: 2.5rem; }
+            .timeline:before { left: 40px; }
+            .timeline-item { width: calc(100% - 80px); margin-left: 80px !important; margin-right: 0 !important; }
+            .timeline-content { border-left: 5px solid var(--bam-red) !important; border-right: none !important; }
+        }
+
+        @media (max-width: 768px) {
+            .menu-btn { display: block; }
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                flex-direction: column;
+                background: linear-gradient(135deg, var(--bam-brown), var(--bam-red));
+                width: 100%;
+                text-align: center;
+                padding: 2rem;
+                transition: 0.5s;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+                z-index: 1000;
+            }
+            .nav-links.active { left: 0; }
+            .nav-links a { display: block; padding: 1rem; }
+            .header-content h1 { font-size: 2.5rem; }
+            .header-content .verse { font-size: 1.3rem; padding: 1.5rem; }
+            section { padding: 4rem 1.5rem; }
+            .card { padding: 2rem; }
+            .partners-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+            .banner-text { font-size: 1.3rem; padding: 2rem; }
+        }
+
+        @media (max-width: 576px) {
+            header { padding: 4rem 1rem; margin-top: 60px; }
+            .header-content h1 { font-size: 2rem; }
+            .header-content .dates { font-size: 1.5rem; }
+            .section-title h2 { font-size: 2rem; }
+            .card { padding: 1.5rem; }
+            .timeline:before { left: 30px; }
+            .timeline-item { width: calc(100% - 60px); margin-left: 60px !important; }
+            .map-placeholder { height: 300px; }
+            .footer-logo { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-heart"></i> Maman Toussi Berthe
+            </div>
+            <button class="menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#accueil" class="active">Accueil</a></li>
+                <li><a href="#biographie">Biographie</a></li>
+                <li><a href="#vie-professionnelle">Carrière</a></li>
+                <li><a href="#partenaires">Engagements</a></li>
+                <li><a href="#programme">Programme</a></li>
+                <li><a href="#temoignages">Témoignages</a></li>
+                <li><a href="#carte">Lieux</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- En-tête -->
+    <header id="accueil">
+        <div class="header-content">
+            <h1>Maman Toussi Berthe</h1>
+            <div class="dates">02 Juillet 1955 – 16 Novembre 2025</div>
+            <div class="verse">
+                <i class="fas fa-quote-left"></i> 
+                « Venez à moi, vous tous qui êtes fatigués et chargés, et je vous donnerai du repos. »
+                <i class="fas fa-quote-right"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Biographie -->
+    <section id="biographie">
+        <div class="section-title">
+            <h2><i class="fas fa-book-open"></i> Biographie</h2>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-heart"></i> Vie Personnelle</h3>
+            <div class="card-content">
+                <p>Née le 02 Juillet 1955, Maman Toussi Berthe a été une femme de foi, de courage et d'amour. Son nom, <strong>Toussi</strong>, lui a été donné par son père qui, après avoir perdu six filles avant elle, a déposé ses larmes devant Dieu… et Dieu lui a accordé cette fille devenue pilier pour toute une famille. Elle était <strong>mère, grand-mère</strong>, une <strong>batisseuse</strong> infatigable, un <strong>rocher</strong> pour les siens.</p>
+            </div>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-home"></i> Vie Familiale</h3>
+            <div class="card-content">
+                <p>Mère de plusieurs enfants, petits-enfants et arrière-petits-enfants, elle a consacré sa vie à l'éducation et à la transmission des valeurs de travail, de foi et d'humilité. Son témoignage vivant restera gravé dans le cœur de tous ceux qu'elle a aimés et élevés.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vie Professionnelle -->
+    <section id="vie-professionnelle">
+        <div class="section-title">
+            <h2><i class="fas fa-briefcase"></i> Vie Professionnelle</h2>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-graduation-cap"></i> Parcours Éducatif</h3>
+            <div class="card-content">
+                <ul>
+                    <li><strong>1973–1974</strong> : Brevet d'Études du Premier Cycle (BEPC) – Collège Saint Thomas d'Aquin</li>
+                    <li><strong>1977–1978</strong> : Certificat d'Aptitude Pédagogique des Instituteurs Adjoints – ENIEG de Bafia</li>
+                    <li><strong>1983–1984</strong> : Certificat d'Aptitude Pédagogique des Instituteurs – Diplôme obtenu sur le tas</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-chalkboard-teacher"></i> Carrière d'Enseignante</h3>
+            <div class="card-content">
+                <ul>
+                    <li><strong>2012–2016</strong> : Directrice de l'École Maternelle de MBI</li>
+                    <li><strong>2001–2007</strong> : Chargée de classe à NDZÉ</li>
+                    <li><strong>1992–2000</strong> : Adjointe chargée de classe – École Publique de DJELENG IIA</li>
+                    <li><strong>1988–1992</strong> : Adjointe chargée de classe – École Publique de KEMA</li>
+                    <li><strong>1986–1988</strong> : Adjointe chargée de classe – École Maternelle du Camp Militaire</li>
+                    <li><strong>1982–1986</strong> : Adjointe chargée de classe – École Publique de DJEMOUN</li>
+                    <li><strong>1980–1982</strong> : Adjointe chargée de classe – École Publique d'OBECK II</li>
+                    <li><strong>1979–1980</strong> : Adjointe chargée de classe – École Publique de NSENG-NLONG</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engagements Associatifs -->
+    <section id="partenaires">
+        <div class="section-title">
+            <h2><i class="fas fa-hands-helping"></i> Engagements Associatifs</h2>
+        </div>
+        <p style="text-align: center; margin-bottom: 2rem; font-size: 1.2rem; color: var(--bam-brown);">Membre active de plusieurs associations et groupes partenaires</p>
+        <div class="partners-grid">
+            <div class="partner-card">
+                <i class="fas fa-church"></i>
+                <h4>Femmes Catholiques</h4>
+            </div>
+            <div class="partner-card">
+                <i class="fas fa-users"></i>
+                <h4>CASMA</h4>
+            </div>
+            <div class="partner-card">
+                <i class="fas fa-hands"></i>
+                <h4>KENGNA</h4>
+            </div>
+            <div class="partner-card">
+                <i class="fas fa-star"></i>
+                <h4>ADEBA</h4>
+            </div>
+            <div class="partner-card">
+                <i class="fas fa-landmark"></i>
+                <h4>Élite Bamougoum</h4>
+            </div>
+            <div class="partner-card">
+                <i class="fas fa-mountain"></i>
+                <h4>Muteuïn (Kamkouop)</h4>
+            </div>
+            <div class="partner-card">
+                <i class="fas fa-school"></i>
+                <h4>Enseignants Ndjeleng II</h4>
+            </div>
+            <div class="partner-card">
+                <i class="fas fa-handshake"></i>
+                <h4>SDF</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programme -->
+    <section id="programme">
+        <div class="section-title">
+            <h2><i class="fas fa-calendar-alt"></i> Programme des Obsèques</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Vendredi 26 Décembre 2025</h3>
+                    <p class="time">13H00</p>
+                    <p>Levée de corps</p>
+                    <p class="time">14H00</p>
+                    <p>Messe à l'Église Catholique Marie Reine des Apôtres de Kamkouop</p>
+                    <p class="time">20H00</p>
+                    <p>Messe à domicile, suivie d'une veillée jusqu'à l'aube</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Samedi 27 Décembre 2025</h3>
+                    <p class="time">09H00</p>
+                    <p>Arrivée des autorités et invités</p>
+                    <p class="time">10H00</p>
+                    <p>Début de la Messe</p>
+                    <p class="time">11H00</p>
+                    <p>Témoignages et inhumation (intimité familiale stricte)</p>
+                    <p class="time">13H00</p>
+                    <p>Collation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Témoignages -->
+    <section id="temoignages">
+        <div class="section-title">
+            <h2><i class="fas fa-comments"></i> Témoignages</h2>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="card-content">
+                <p>Ma jeune, notre reine à nous tu as été un exemple pour nous tes enfants et connaissances, notre pilier et notre lionne. Nous aurions voulu que tu restes encore pour nous aider à éduquer tes petits enfants de la même façons que tu l'as fait avec nous tes enfants. Tu as tellement bataillé tant en santé que malade.</p>
+                <p>Dieu a décidé qu'il est temps pour toi d'aller te reposer, même si c'est avec un cœur meurtri accompagné de l'éducation reçue de toi, nous acceptons ton départ et remercions Dieu le père de nous avoir donné une batisseuse comme toi.</p>
+                <p>Bisous mommy, va et repose toi maintenant au près de Dieu. Ton bébé de la retraite.</p>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="card-content">
+                <p>Tu étais bien plus qu'un être cher, tu étais mon pilier absolu, la source de toute ma force. Tout ce que je suis aujourd'hui, je le dois à ton soutien indéfectible et à ta foi en moi quand je doutais. Tu savais si bien m'encourager, alternant avec justesse entre bienveillance et exigence - cette main toujours prête à me relever, et ce vent qui m'empêchait de me reposer.</p>
+                <p>Tu étais cette lumière dans l'obscurité qui me guidait, me poussant à me dépasser même quand tout semblait perdu. Travailleuse infatigable, ton exemple et ton amour résonnent en moi comme un guide éternel, et ton absence laisse un vide que rien ne peut combler. Chaque pas que je fais désormais, je le fais en portant ta mémoire et tout l'amour que tu m'as donné.</p>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="card-content">
+                <p>Tu as occupé tellement de fonctions dans ta vie: (1) enseignante, (2) catéchiste, (3) ministre Eucharistique, (4) cultivateur, (5) femme politique, etc...</p>
+                <p>La toile de fond qui relie tous ces rôles, c'est ton cœur qui avait dit oui à Dieu depuis fort longtemps à SON appel pour alléger les souffrances de tes semblables à ton niveau.</p>
+                <p>Moi en tant que ton fils, j'ai bénéficié de traits de caractères développés dans tous ces rôles. Tu m'as appris le rôle du bon et vrai travail, la culture de l'effort, sans toutefois essayer d'obtenir un certain résultat malgré tout; au contraire l'humilité de mettre ses petits moyens à la disponibilité de Dieu.</p>
+                <p>Tu m'as appris à prier, et à chercher Dieu, à travailler au champ, et à se battre pour prévoir l'avenir.</p>
+                <p>Moi, je t'aimerai et t'honorerai tous les jours de ma vie, à travers tous ces aspects, et bien plus encore.</p>
+                <p>Parent maintenant, époux et frère, je continuerai dans ta lancée.</p>
+                <p>À bientôt maman, je serai ravi de te revoir auprès de Dieu, mon moment venu.</p>
+                <div class="testimonial-author">FONKOU William Patrick</div>
+            </div>
+        </div>
+
+        <div class="banner-text">
+            À TOI, NOTRE PILIER<br>
+            TON AMOUR RESTE NOTRE FORCE<br>
+            TON COURAGE, NOTRE LUMIÈRE<br>
+            À JAMAIS DANS NOS CŒURS
+        </div>
+
+        <div class="testimonial-card">
+            <div class="card-content">
+                <p>Papa t'avait donné le nom de Toussi parce qu'il avait enterré 6 autres filles devant toi alors il avait déposé ses larmes devant le Seigneur par ce nom Toussis et le Seigneur le lui accorda en donnant celle que nous sommes.</p>
+                <div class="testimonial-author">Pour Maman Vizanne</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carte des Lieux -->
+    <section id="carte">
+        <div class="section-title">
+            <h2><i class="fas fa-map-marked-alt"></i> Lieux des Obsèques</h2>
+        </div>
+        <div class="map-container">
+            <div class="map-header">
+                <i class="fas fa-map-pin"></i> Carte des Lieux – Bafoussam, Kamkouop
+            </div>
+            <div class="map-placeholder">
+                <div style="text-align: center; z-index: 2;">
+                    <i class="fas fa-map"></i>
+                    <p>Carte de Bafoussam – Kamkouop</p>
+                    <small>Localisation des lieux des obsèques</small>
+                </div>
+            </div>
+            <div class="map-info">
+                <div class="location-item">
+                    <i class="fas fa-hospital"></i>
+                    <div class="location-text">
+                        <strong>Levée de corps</strong>
+                        Morgue de l'Hôpital Régional de Bafoussam
+                    </div>
+                </div>
+                <div class="location-item">
+                    <i class="fas fa-home"></i>
+                    <div class="location-text">
+                        <strong>Domicile / Veillée</strong>
+                        Kamkouop 4, sis Hôtel Le Paradis
+                    </div>
+                </div>
+                <div class="location-item">
+                    <i class="fas fa-church"></i>
+                    <div class="location-text">
+                        <strong>Messe Principale</strong>
+                        Église Catholique Marie Reine des Apôtres de Kamkouop
+                    </div>
+                </div>
+                <div class="location-item">
+                    <i class="fas fa-hotel"></i>
+                    <div class="location-text">
+                        <strong>Hébergement suggéré</strong>
+                        Hôtel Le Paradis, Savonnerie SCS
+                    </div>
+                </div>
+                <div class="location-item">
+                    <i class="fas fa-road"></i>
+                    <div class="location-text">
+                        <strong>Villes de provenance</strong>
+                        Bamougoum, Bafoussam, Sangmélima, Yaoundé, Russie, États-Unis
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <i class="fas fa-dove"></i> Maman Toussi Berthe
+        </div>
+        <div class="footer-dates">02 Juillet 1955 – 16 Novembre 2025</div>
+        <div class="footer-quote">
+            « Que son âme repose en paix auprès du Seigneur. Elle restera à jamais dans nos cœurs comme notre pilier, notre force et notre lumière. »
+        </div>
+        <div class="family-names">
+            <div class="family-name">Famille Penka Joséphine</div>
+            <div class="family-name">Famille Mboucheko Geneviève</div>
+            <div class="family-name">Famille Fosso Tande Jacob</div>
+            <div class="family-name">Famille Tsinkou Stéphanie Laure</div>
+            <div class="family-name">Famille Tchuankam Carine Reine</div>
+            <div class="family-name">Famille Tande Romain</div>
+            <div class="family-name">Famille Fonkou William Patrick</div>
+            <div class="family-name">Famille Sime Marc Freddy</div>
+        </div>
+        <p style="margin-top: 3rem; color: #aaa; font-size: 0.9rem; position: relative; z-index: 2;">
+            Site hommage réalisé avec amour par la famille et les proches.
+        </p>
+    </footer>
+
+    <script>
+        // Menu mobile
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Fermer le menu en cliquant sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Navigation fluide
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Mettre à jour le lien actif pendant le défilement
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if(scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Animation des cartes au défilement
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observer les cartes et éléments à animer
+        document.querySelectorAll('.card, .partner-card, .timeline-item, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
