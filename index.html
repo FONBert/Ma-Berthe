@@ -10,13 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bam-red: #8B0000;
-            --bam-blue: #1A237E;
-            --bam-gold: #D4AF37;
-            --bam-brown: #5D4037;
-            --bam-beige: #F5F1E6;
-            --bam-black: #1A1A1A;
-            --bam-pattern: #8B7355;
+            /* Couleurs traditionnelles Ndop Bamiléké */
+            --ndop-indigo: #0A2342;     /* Bleu indigo foncé - fond principal */
+            --ndop-white: #F5F1E6;      /* Blanc cassé - motifs */
+            --ndop-cream: #FFF8E7;      /* Crème - arrière-plan */
+            --ndop-gold: #D4AF37;       /* Or - détails précieux */
+            --ndop-brown: #5D4037;      /* Brun terre - éléments naturels */
+            --ndop-burgundy: #8B0000;   /* Rouge bordeaux - accents */
+            --ndop-clay: #8B7355;       /* Argile - tons neutres */
+            --ndop-blue: #1A237E;       /* Bleu roi - réserve */
+            
+            /* Variables pour les motifs Ndop */
+            --ndop-pattern-light: rgba(212, 175, 55, 0.1);
+            --ndop-pattern-medium: rgba(139, 0, 0, 0.15);
+            --ndop-pattern-dark: rgba(10, 35, 66, 0.1);
         }
 
         * {
@@ -27,12 +34,13 @@
 
         body {
             font-family: 'Source Sans Pro', sans-serif;
-            background-color: var(--bam-beige);
-            color: var(--bam-black);
+            background-color: var(--ndop-cream);
+            color: var(--ndop-indigo);
             line-height: 1.6;
             background-image: 
-                radial-gradient(circle at 25% 25%, rgba(139, 0, 0, 0.03) 0%, transparent 55%),
-                radial-gradient(circle at 75% 75%, rgba(26, 35, 126, 0.03) 0%, transparent 55%);
+                radial-gradient(circle at 25% 25%, var(--ndop-pattern-light) 0%, transparent 55%),
+                radial-gradient(circle at 75% 75%, var(--ndop-pattern-dark) 0%, transparent 55%);
+            background-attachment: fixed;
         }
 
         h1, h2, h3, h4 {
@@ -40,20 +48,21 @@
             font-weight: 600;
         }
 
-        /* Navigation */
+        /* Navigation avec motifs Ndop */
         nav {
-            background: linear-gradient(135deg, var(--bam-brown) 0%, var(--bam-red) 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--ndop-indigo) 0%, var(--ndop-blue) 100%);
+            color: var(--ndop-white);
             padding: 1rem 2rem;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-            border-bottom: 4px solid var(--bam-gold);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            border-bottom: 4px solid var(--ndop-gold);
             background-image: 
-                linear-gradient(45deg, transparent 45%, rgba(212, 175, 55, 0.1) 46%, rgba(212, 175, 55, 0.1) 54%, transparent 55%),
-                linear-gradient(-45deg, transparent 45%, rgba(212, 175, 55, 0.1) 46%, rgba(212, 175, 55, 0.1) 54%, transparent 55%);
+                /* Motif géométrique Ndop */
+                linear-gradient(45deg, transparent 45%, var(--ndop-pattern-light) 46%, var(--ndop-pattern-light) 54%, transparent 55%),
+                linear-gradient(-45deg, transparent 45%, var(--ndop-pattern-light) 46%, var(--ndop-pattern-light) 54%, transparent 55%);
             background-size: 20px 20px;
         }
 
@@ -75,7 +84,7 @@
         }
 
         .logo i {
-            color: var(--bam-gold);
+            color: var(--ndop-gold);
             animation: pulse 2s infinite;
         }
 
@@ -92,7 +101,7 @@
         }
 
         .nav-links a {
-            color: white;
+            color: var(--ndop-white);
             text-decoration: none;
             font-weight: 600;
             padding: 0.5rem 1rem;
@@ -109,7 +118,7 @@
             left: -100%;
             width: 100%;
             height: 2px;
-            background: var(--bam-gold);
+            background: var(--ndop-gold);
             transition: left 0.3s;
         }
 
@@ -119,7 +128,7 @@
         }
 
         .nav-links a:hover {
-            background-color: rgba(212, 175, 55, 0.2);
+            background-color: var(--ndop-pattern-light);
         }
 
         .menu-btn {
@@ -128,18 +137,19 @@
             cursor: pointer;
             background: none;
             border: none;
-            color: white;
+            color: var(--ndop-white);
         }
 
-        /* En-tête */
+        /* En-tête avec fond Ndop */
         header {
             margin-top: 70px;
-            background: linear-gradient(rgba(90, 64, 55, 0.85), rgba(139, 0, 0, 0.85)), 
-                        url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background: 
+                linear-gradient(rgba(10, 35, 66, 0.85), rgba(26, 35, 126, 0.85)),
+                url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: white;
+            color: var(--ndop-white);
             text-align: center;
             padding: 6rem 2rem;
             position: relative;
@@ -158,6 +168,7 @@
             margin-bottom: 1rem;
             text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
             animation: fadeInUp 1s ease-out;
+            color: var(--ndop-gold);
         }
 
         @keyframes fadeInUp {
@@ -173,7 +184,7 @@
 
         .header-content .dates {
             font-size: 2rem;
-            color: var(--bam-gold);
+            color: var(--ndop-gold);
             font-weight: 300;
             margin-bottom: 2rem;
             animation: fadeInUp 1s ease-out 0.2s both;
@@ -185,9 +196,9 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
-            background-color: rgba(26, 35, 126, 0.7);
+            background-color: rgba(90, 64, 55, 0.7);
             border-radius: 15px;
-            border-left: 5px solid var(--bam-gold);
+            border-left: 5px solid var(--ndop-gold);
             animation: fadeInUp 1s ease-out 0.4s both;
             position: relative;
             overflow: hidden;
@@ -200,7 +211,7 @@
             left: 10px;
             font-size: 3rem;
             opacity: 0.1;
-            color: var(--bam-gold);
+            color: var(--ndop-gold);
         }
 
         /* Sections générales */
@@ -219,10 +230,10 @@
 
         .section-title h2 {
             font-size: 3rem;
-            color: var(--bam-red);
+            color: var(--ndop-indigo);
             display: inline-block;
             padding: 0 2rem;
-            background: var(--bam-beige);
+            background: var(--ndop-cream);
             position: relative;
             z-index: 2;
         }
@@ -232,25 +243,25 @@
             position: absolute;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, var(--bam-gold), var(--bam-blue));
+            background: linear-gradient(90deg, var(--ndop-gold), var(--ndop-burgundy));
             bottom: 0;
             left: 0;
             z-index: 1;
         }
 
         .section-title i {
-            color: var(--bam-brown);
+            color: var(--ndop-brown);
             margin-right: 10px;
         }
 
-        /* Cartes */
+        /* Cartes avec style Ndop */
         .card {
-            background: white;
+            background: var(--ndop-white);
             border-radius: 15px;
             padding: 2.5rem;
             margin-bottom: 2.5rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border-top: 5px solid var(--bam-blue);
+            border-top: 5px solid var(--ndop-indigo);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
@@ -268,11 +279,11 @@
             left: 0;
             width: 100%;
             height: 5px;
-            background: linear-gradient(90deg, var(--bam-gold), transparent);
+            background: linear-gradient(90deg, var(--ndop-gold), transparent);
         }
 
         .card h3 {
-            color: var(--bam-brown);
+            color: var(--ndop-brown);
             margin-bottom: 1.5rem;
             font-size: 1.8rem;
             display: flex;
@@ -282,7 +293,7 @@
         }
 
         .card h3 i {
-            color: var(--bam-red);
+            color: var(--ndop-burgundy);
             font-size: 1.5rem;
         }
 
@@ -303,7 +314,7 @@
 
         .card-content li:before {
             content: '•';
-            color: var(--bam-red);
+            color: var(--ndop-burgundy);
             font-weight: bold;
             display: inline-block;
             width: 1em;
@@ -319,7 +330,7 @@
         }
 
         .partner-card {
-            background: white;
+            background: var(--ndop-white);
             padding: 2rem;
             border-radius: 12px;
             text-align: center;
@@ -331,7 +342,7 @@
         }
 
         .partner-card:hover {
-            border-color: var(--bam-red);
+            border-color: var(--ndop-burgundy);
             transform: translateY(-5px) scale(1.02);
             box-shadow: 0 15px 30px rgba(139, 0, 0, 0.1);
         }
@@ -343,18 +354,18 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--bam-gold), var(--bam-blue));
+            background: linear-gradient(90deg, var(--ndop-gold), var(--ndop-indigo));
         }
 
         .partner-card i {
             font-size: 2.5rem;
-            color: var(--bam-blue);
+            color: var(--ndop-indigo);
             margin-bottom: 1.5rem;
             display: block;
         }
 
         .partner-card h4 {
-            color: var(--bam-brown);
+            color: var(--ndop-brown);
             font-size: 1.2rem;
             font-weight: 600;
         }
@@ -374,7 +385,7 @@
             transform: translateX(-50%);
             width: 6px;
             height: 100%;
-            background: linear-gradient(to bottom, var(--bam-red), var(--bam-blue));
+            background: linear-gradient(to bottom, var(--ndop-burgundy), var(--ndop-indigo));
             border-radius: 3px;
         }
 
@@ -395,18 +406,18 @@
         }
 
         .timeline-content {
-            background: white;
+            background: var(--ndop-white);
             padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border-left: 5px solid var(--bam-red);
+            border-left: 5px solid var(--ndop-burgundy);
             position: relative;
             overflow: hidden;
         }
 
         .timeline-item:nth-child(even) .timeline-content {
             border-left: none;
-            border-right: 5px solid var(--bam-blue);
+            border-right: 5px solid var(--ndop-indigo);
         }
 
         .timeline-content:before {
@@ -416,21 +427,21 @@
             left: 0;
             right: 0;
             height: 100%;
-            background: linear-gradient(45deg, transparent 40%, rgba(212, 175, 55, 0.05) 50%, transparent 60%);
+            background: linear-gradient(45deg, transparent 40%, var(--ndop-pattern-light) 50%, transparent 60%);
             pointer-events: none;
         }
 
         .timeline-content h3 {
-            color: var(--bam-brown);
+            color: var(--ndop-brown);
             margin-bottom: 1rem;
             font-size: 1.5rem;
-            border-bottom: 2px solid rgba(139, 0, 0, 0.1);
+            border-bottom: 2px solid var(--ndop-pattern-medium);
             padding-bottom: 0.5rem;
         }
 
         .time {
             font-weight: bold;
-            color: var(--bam-red);
+            color: var(--ndop-burgundy);
             display: block;
             margin-bottom: 0.8rem;
             font-size: 1.1rem;
@@ -443,7 +454,7 @@
         /* Témoignages spéciaux */
         .testimonial-card {
             background: linear-gradient(135deg, #f9f3e9 0%, #fff8f0 100%);
-            border-left: 6px solid var(--bam-gold);
+            border-left: 6px solid var(--ndop-gold);
             padding: 2.5rem;
             margin-bottom: 2.5rem;
             border-radius: 0 15px 15px 0;
@@ -457,18 +468,18 @@
             top: 20px;
             left: 20px;
             font-size: 8rem;
-            color: rgba(212, 175, 55, 0.2);
+            color: var(--ndop-pattern-light);
             font-family: Georgia, serif;
             line-height: 1;
         }
 
         .testimonial-author {
             font-weight: bold;
-            color: var(--bam-brown);
+            color: var(--ndop-brown);
             margin-top: 1.5rem;
             font-style: italic;
             text-align: right;
-            border-top: 1px solid rgba(139, 0, 0, 0.1);
+            border-top: 1px solid var(--ndop-pattern-medium);
             padding-top: 1rem;
         }
 
@@ -481,30 +492,30 @@
             font-size: 1.5rem;
             font-weight: bold;
             padding: 2.5rem;
-            background: linear-gradient(135deg, rgba(139, 0, 0, 0.9), rgba(26, 35, 126, 0.9));
-            color: white;
+            background: linear-gradient(135deg, var(--ndop-indigo), var(--ndop-brown));
+            color: var(--ndop-white);
             border-radius: 15px;
             margin: 3rem 0;
             line-height: 1.8;
-            border: 2px solid var(--bam-gold);
+            border: 2px solid var(--ndop-gold);
             text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
             font-family: 'Playfair Display', serif;
         }
 
         /* Carte */
         .map-container {
-            background: white;
+            background: var(--ndop-white);
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 15px 40px rgba(0,0,0,0.1);
             margin-top: 2rem;
-            border: 1px solid rgba(139, 0, 0, 0.1);
+            border: 1px solid var(--ndop-pattern-medium);
         }
 
         .map-header {
             padding: 1.5rem;
-            background: linear-gradient(135deg, var(--bam-brown), var(--bam-red));
-            color: white;
+            background: linear-gradient(135deg, var(--ndop-indigo), var(--ndop-brown));
+            color: var(--ndop-white);
             text-align: center;
             font-size: 1.3rem;
             font-weight: bold;
@@ -512,33 +523,24 @@
 
         .map-placeholder {
             height: 400px;
-            background: linear-gradient(45deg, #f0e6d6 25%, #f9f3e9 25%, #f9f3e9 50%, #f0e6d6 50%, #f0e6d6 75%, #f9f3e9 75%);
+            background: 
+                /* Motif Ndop en damier */
+                linear-gradient(45deg, #e8e2d1 25%, transparent 25%, transparent 75%, #e8e2d1 75%, #e8e2d1),
+                linear-gradient(45deg, #e8e2d1 25%, transparent 25%, transparent 75%, #e8e2d1 75%, #e8e2d1);
             background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--bam-brown);
+            color: var(--ndop-brown);
             font-size: 1.2rem;
             position: relative;
             overflow: hidden;
         }
 
-        .map-placeholder:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                linear-gradient(90deg, transparent 49%, rgba(139, 0, 0, 0.1) 50%, transparent 51%),
-                linear-gradient(0deg, transparent 49%, rgba(139, 0, 0, 0.1) 50%, transparent 51%);
-            background-size: 40px 40px;
-        }
-
         .map-placeholder i {
             font-size: 4rem;
-            color: var(--bam-red);
+            color: var(--ndop-burgundy);
             margin-bottom: 1rem;
             display: block;
             z-index: 2;
@@ -556,9 +558,9 @@
             gap: 15px;
             margin-bottom: 1.5rem;
             padding: 1rem;
-            background: white;
+            background: var(--ndop-white);
             border-radius: 10px;
-            border-left: 4px solid var(--bam-blue);
+            border-left: 4px solid var(--ndop-indigo);
             transition: all 0.3s;
         }
 
@@ -568,27 +570,27 @@
         }
 
         .location-item i {
-            color: var(--bam-red);
+            color: var(--ndop-burgundy);
             font-size: 1.5rem;
             margin-top: 5px;
             flex-shrink: 0;
         }
 
         .location-text strong {
-            color: var(--bam-brown);
+            color: var(--ndop-brown);
             font-size: 1.1rem;
             display: block;
             margin-bottom: 0.3rem;
         }
 
-        /* Footer */
+        /* Footer avec motifs Ndop */
         footer {
-            background: linear-gradient(135deg, var(--bam-black) 0%, var(--bam-brown) 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--ndop-indigo) 0%, var(--ndop-brown) 100%);
+            color: var(--ndop-white);
             text-align: center;
             padding: 4rem 2rem;
             margin-top: 4rem;
-            border-top: 5px solid var(--bam-gold);
+            border-top: 5px solid var(--ndop-gold);
             position: relative;
             overflow: hidden;
         }
@@ -600,9 +602,10 @@
             left: 0;
             right: 0;
             height: 100%;
+            /* Motif Ndop géométrique */
             background-image: 
-                linear-gradient(45deg, transparent 45%, rgba(212, 175, 55, 0.05) 46%, rgba(212, 175, 55, 0.05) 54%, transparent 55%),
-                linear-gradient(-45deg, transparent 45%, rgba(212, 175, 55, 0.05) 46%, rgba(212, 175, 55, 0.05) 54%, transparent 55%);
+                linear-gradient(45deg, transparent 45%, var(--ndop-pattern-light) 46%, var(--ndop-pattern-light) 54%, transparent 55%),
+                linear-gradient(-45deg, transparent 45%, var(--ndop-pattern-light) 46%, var(--ndop-pattern-light) 54%, transparent 55%);
             background-size: 30px 30px;
             pointer-events: none;
         }
@@ -616,13 +619,13 @@
         }
 
         .footer-logo i {
-            color: var(--bam-gold);
+            color: var(--ndop-gold);
             margin-right: 15px;
         }
 
         .footer-dates {
             font-size: 1.3rem;
-            color: var(--bam-gold);
+            color: var(--ndop-gold);
             margin-bottom: 1.5rem;
             position: relative;
             z-index: 2;
@@ -640,7 +643,7 @@
             padding: 1.5rem;
             background: rgba(0,0,0,0.2);
             border-radius: 10px;
-            border-left: 3px solid var(--bam-gold);
+            border-left: 3px solid var(--ndop-gold);
         }
 
         .family-names {
@@ -659,6 +662,7 @@
             border-radius: 20px;
             border: 1px solid rgba(212, 175, 55, 0.3);
             font-size: 0.9rem;
+            color: var(--ndop-white);
         }
 
         /* Responsive */
@@ -672,7 +676,7 @@
             .section-title h2 { font-size: 2.5rem; }
             .timeline:before { left: 40px; }
             .timeline-item { width: calc(100% - 80px); margin-left: 80px !important; margin-right: 0 !important; }
-            .timeline-content { border-left: 5px solid var(--bam-red) !important; border-right: none !important; }
+            .timeline-content { border-left: 5px solid var(--ndop-burgundy) !important; border-right: none !important; }
         }
 
         @media (max-width: 768px) {
@@ -682,7 +686,7 @@
                 top: 70px;
                 left: -100%;
                 flex-direction: column;
-                background: linear-gradient(135deg, var(--bam-brown), var(--bam-red));
+                background: linear-gradient(135deg, var(--ndop-indigo), var(--ndop-brown));
                 width: 100%;
                 text-align: center;
                 padding: 2rem;
@@ -718,10 +722,10 @@
     <nav>
         <div class="nav-container">
             <div class="logo">
-                <i class="fas fa-heart"></i> Maman Toussi Berthe
+                <i class="fas fa-heart" aria-hidden="true"></i> Maman Toussi Berthe
             </div>
-            <button class="menu-btn" id="menuBtn">
-                <i class="fas fa-bars"></i>
+            <button class="menu-btn" id="menuBtn" aria-label="Menu">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#accueil" class="active">Accueil</a></li>
@@ -741,9 +745,9 @@
             <h1>Maman Toussi Berthe</h1>
             <div class="dates">02 Juillet 1955 – 16 Novembre 2025</div>
             <div class="verse">
-                <i class="fas fa-quote-left"></i> 
+                <i class="fas fa-quote-left" aria-hidden="true"></i> 
                 « Venez à moi, vous tous qui êtes fatigués et chargés, et je vous donnerai du repos. »
-                <i class="fas fa-quote-right"></i>
+                <i class="fas fa-quote-right" aria-hidden="true"></i>
             </div>
         </div>
     </header>
@@ -751,16 +755,16 @@
     <!-- Biographie -->
     <section id="biographie">
         <div class="section-title">
-            <h2><i class="fas fa-book-open"></i> Biographie</h2>
+            <h2><i class="fas fa-book-open" aria-hidden="true"></i> Biographie</h2>
         </div>
         <div class="card">
-            <h3><i class="fas fa-heart"></i> Vie Personnelle</h3>
+            <h3><i class="fas fa-heart" aria-hidden="true"></i> Vie Personnelle</h3>
             <div class="card-content">
                 <p>Née le 02 Juillet 1955, Maman Toussi Berthe a été une femme de foi, de courage et d'amour. Son nom, <strong>Toussi</strong>, lui a été donné par son père qui, après avoir perdu six filles avant elle, a déposé ses larmes devant Dieu… et Dieu lui a accordé cette fille devenue pilier pour toute une famille. Elle était <strong>mère, grand-mère</strong>, une <strong>batisseuse</strong> infatigable, un <strong>rocher</strong> pour les siens.</p>
             </div>
         </div>
         <div class="card">
-            <h3><i class="fas fa-home"></i> Vie Familiale</h3>
+            <h3><i class="fas fa-home" aria-hidden="true"></i> Vie Familiale</h3>
             <div class="card-content">
                 <p>Mère de plusieurs enfants, petits-enfants et arrière-petits-enfants, elle a consacré sa vie à l'éducation et à la transmission des valeurs de travail, de foi et d'humilité. Son témoignage vivant restera gravé dans le cœur de tous ceux qu'elle a aimés et élevés.</p>
             </div>
@@ -770,10 +774,10 @@
     <!-- Vie Professionnelle -->
     <section id="vie-professionnelle">
         <div class="section-title">
-            <h2><i class="fas fa-briefcase"></i> Vie Professionnelle</h2>
+            <h2><i class="fas fa-briefcase" aria-hidden="true"></i> Vie Professionnelle</h2>
         </div>
         <div class="card">
-            <h3><i class="fas fa-graduation-cap"></i> Parcours Éducatif</h3>
+            <h3><i class="fas fa-graduation-cap" aria-hidden="true"></i> Parcours Éducatif</h3>
             <div class="card-content">
                 <ul>
                     <li><strong>1973–1974</strong> : Brevet d'Études du Premier Cycle (BEPC) – Collège Saint Thomas d'Aquin</li>
@@ -783,7 +787,7 @@
             </div>
         </div>
         <div class="card">
-            <h3><i class="fas fa-chalkboard-teacher"></i> Carrière d'Enseignante</h3>
+            <h3><i class="fas fa-chalkboard-teacher" aria-hidden="true"></i> Carrière d'Enseignante</h3>
             <div class="card-content">
                 <ul>
                     <li><strong>2012–2016</strong> : Directrice de l'École Maternelle de MBI</li>
@@ -802,40 +806,40 @@
     <!-- Engagements Associatifs -->
     <section id="partenaires">
         <div class="section-title">
-            <h2><i class="fas fa-hands-helping"></i> Engagements Associatifs</h2>
+            <h2><i class="fas fa-hands-helping" aria-hidden="true"></i> Engagements Associatifs</h2>
         </div>
-        <p style="text-align: center; margin-bottom: 2rem; font-size: 1.2rem; color: var(--bam-brown);">Membre active de plusieurs associations et groupes partenaires</p>
+        <p style="text-align: center; margin-bottom: 2rem; font-size: 1.2rem; color: var(--ndop-brown);">Membre active de plusieurs associations et groupes partenaires</p>
         <div class="partners-grid">
             <div class="partner-card">
-                <i class="fas fa-church"></i>
+                <i class="fas fa-church" aria-hidden="true"></i>
                 <h4>Femmes Catholiques</h4>
             </div>
             <div class="partner-card">
-                <i class="fas fa-users"></i>
+                <i class="fas fa-users" aria-hidden="true"></i>
                 <h4>CASMA</h4>
             </div>
             <div class="partner-card">
-                <i class="fas fa-hands"></i>
+                <i class="fas fa-hands" aria-hidden="true"></i>
                 <h4>KENGNA</h4>
             </div>
             <div class="partner-card">
-                <i class="fas fa-star"></i>
+                <i class="fas fa-star" aria-hidden="true"></i>
                 <h4>ADEBA</h4>
             </div>
             <div class="partner-card">
-                <i class="fas fa-landmark"></i>
+                <i class="fas fa-landmark" aria-hidden="true"></i>
                 <h4>Élite Bamougoum</h4>
             </div>
             <div class="partner-card">
-                <i class="fas fa-mountain"></i>
+                <i class="fas fa-mountain" aria-hidden="true"></i>
                 <h4>Muteuïn (Kamkouop)</h4>
             </div>
             <div class="partner-card">
-                <i class="fas fa-school"></i>
+                <i class="fas fa-school" aria-hidden="true"></i>
                 <h4>Enseignants Ndjeleng II</h4>
             </div>
             <div class="partner-card">
-                <i class="fas fa-handshake"></i>
+                <i class="fas fa-handshake" aria-hidden="true"></i>
                 <h4>SDF</h4>
             </div>
         </div>
@@ -844,7 +848,7 @@
     <!-- Programme -->
     <section id="programme">
         <div class="section-title">
-            <h2><i class="fas fa-calendar-alt"></i> Programme des Obsèques</h2>
+            <h2><i class="fas fa-calendar-alt" aria-hidden="true"></i> Programme des Obsèques</h2>
         </div>
         <div class="timeline">
             <div class="timeline-item">
@@ -877,7 +881,7 @@
     <!-- Témoignages COMPLETS -->
     <section id="temoignages">
         <div class="section-title">
-            <h2><i class="fas fa-comments"></i> Témoignages</h2>
+            <h2><i class="fas fa-comments" aria-hidden="true"></i> Témoignages</h2>
         </div>
 
         <!-- Témoignage 1 : Texte principal -->
@@ -985,50 +989,50 @@
     <!-- Carte des Lieux -->
     <section id="carte">
         <div class="section-title">
-            <h2><i class="fas fa-map-marked-alt"></i> Lieux des Obsèques</h2>
+            <h2><i class="fas fa-map-marked-alt" aria-hidden="true"></i> Lieux des Obsèques</h2>
         </div>
         <div class="map-container">
             <div class="map-header">
-                <i class="fas fa-map-pin"></i> Carte des Lieux – Bafoussam, Kamkouop
+                <i class="fas fa-map-pin" aria-hidden="true"></i> Carte des Lieux – Bafoussam, Kamkouop
             </div>
             <div class="map-placeholder">
                 <div style="text-align: center; z-index: 2;">
-                    <i class="fas fa-map"></i>
+                    <i class="fas fa-map" aria-hidden="true"></i>
                     <p>Carte de Bafoussam – Kamkouop</p>
                     <small>Localisation des lieux des obsèques</small>
                 </div>
             </div>
             <div class="map-info">
                 <div class="location-item">
-                    <i class="fas fa-hospital"></i>
+                    <i class="fas fa-hospital" aria-hidden="true"></i>
                     <div class="location-text">
                         <strong>Levée de corps</strong>
                         Morgue de l'Hôpital Régional de Bafoussam
                     </div>
                 </div>
                 <div class="location-item">
-                    <i class="fas fa-home"></i>
+                    <i class="fas fa-home" aria-hidden="true"></i>
                     <div class="location-text">
                         <strong>Domicile / Veillée</strong>
                         Kamkouop 4, sis Hôtel Le Paradis
                     </div>
                 </div>
                 <div class="location-item">
-                    <i class="fas fa-church"></i>
+                    <i class="fas fa-church" aria-hidden="true"></i>
                     <div class="location-text">
                         <strong>Messe Principale</strong>
                         Église Catholique Marie Reine des Apôtres de Kamkouop
                     </div>
                 </div>
                 <div class="location-item">
-                    <i class="fas fa-hotel"></i>
+                    <i class="fas fa-hotel" aria-hidden="true"></i>
                     <div class="location-text">
                         <strong>Hébergement suggéré</strong>
                         Hôtel Le Paradis, Savonnerie SCS
                     </div>
                 </div>
                 <div class="location-item">
-                    <i class="fas fa-road"></i>
+                    <i class="fas fa-road" aria-hidden="true"></i>
                     <div class="location-text">
                         <strong>Villes de provenance</strong>
                         Bamougoum, Bafoussam, Sangmélima, Yaoundé, Russie, États-Unis
@@ -1041,7 +1045,7 @@
     <!-- Footer -->
     <footer>
         <div class="footer-logo">
-            <i class="fas fa-dove"></i> Maman Toussi Berthe
+            <i class="fas fa-dove" aria-hidden="true"></i> Maman Toussi Berthe
         </div>
         <div class="footer-dates">02 Juillet 1955 – 16 Novembre 2025</div>
         <div class="footer-quote">
@@ -1110,7 +1114,7 @@
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
-                if(scrollY >= (sectionTop - 100)) {
+                if(window.scrollY >= (sectionTop - 100)) {
                     current = section.getAttribute('id');
                 }
             });
@@ -1144,6 +1148,19 @@
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             observer.observe(el);
+        });
+
+        // Initialiser le lien actif au chargement
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-links a');
+            if(window.location.hash) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if(link.getAttribute('href') === window.location.hash) {
+                        link.classList.add('active');
+                    }
+                });
+            }
         });
     </script>
 </body>
