@@ -140,12 +140,11 @@
             color: var(--ndop-white);
         }
 
-        /* En-tête avec fond Ndop */
+        /* En-tête avec fond Ndop et images */
         header {
             margin-top: 70px;
             background: 
-                linear-gradient(rgba(10, 35, 66, 0.85), rgba(26, 35, 126, 0.85)),
-                url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+                linear-gradient(rgba(10, 35, 66, 0.85), rgba(26, 35, 126, 0.85));
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -154,6 +153,25 @@
             padding: 6rem 2rem;
             position: relative;
             overflow: hidden;
+        }
+
+        .header-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .header-bg-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+            transition: opacity 2s ease-in-out;
         }
 
         .header-content {
@@ -370,7 +388,7 @@
             font-weight: 600;
         }
 
-        /* Programme */
+        /* Programme amélioré */
         .timeline {
             position: relative;
             max-width: 1000px;
@@ -451,6 +469,110 @@
             display: inline-block;
         }
 
+        /* Section Localisation avec image */
+        .localisation-section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .localisation-container {
+            background: var(--ndop-white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+            border: 1px solid var(--ndop-pattern-medium);
+        }
+
+        .localisation-header {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--ndop-indigo), var(--ndop-brown));
+            color: var(--ndop-white);
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .localisation-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            background: #f0f0f0;
+            min-height: 400px;
+            position: relative;
+        }
+
+        .localisation-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .localisation-placeholder {
+            width: 100%;
+            height: 400px;
+            background: 
+                /* Motif Ndop en damier */
+                linear-gradient(45deg, #e8e2d1 25%, transparent 25%, transparent 75%, #e8e2d1 75%, #e8e2d1),
+                linear-gradient(45deg, #e8e2d1 25%, transparent 25%, transparent 75%, #e8e2d1 75%, #e8e2d1);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ndop-brown);
+            font-size: 1.2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .localisation-placeholder i {
+            font-size: 4rem;
+            color: var(--ndop-burgundy);
+            margin-bottom: 1rem;
+            display: block;
+            z-index: 2;
+        }
+
+        .localisation-info {
+            padding: 2rem;
+            background: linear-gradient(to bottom, #f8f4e9, #fff);
+            border-top: 1px solid #eee;
+        }
+
+        .location-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--ndop-white);
+            border-radius: 10px;
+            border-left: 4px solid var(--ndop-indigo);
+            transition: all 0.3s;
+        }
+
+        .location-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .location-item i {
+            color: var(--ndop-burgundy);
+            font-size: 1.5rem;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+
+        .location-text strong {
+            color: var(--ndop-brown);
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
         /* Témoignages spéciaux */
         .testimonial-card {
             background: linear-gradient(135deg, #f9f3e9 0%, #fff8f0 100%);
@@ -500,87 +622,6 @@
             border: 2px solid var(--ndop-gold);
             text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
             font-family: 'Playfair Display', serif;
-        }
-
-        /* Carte */
-        .map-container {
-            background: var(--ndop-white);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            margin-top: 2rem;
-            border: 1px solid var(--ndop-pattern-medium);
-        }
-
-        .map-header {
-            padding: 1.5rem;
-            background: linear-gradient(135deg, var(--ndop-indigo), var(--ndop-brown));
-            color: var(--ndop-white);
-            text-align: center;
-            font-size: 1.3rem;
-            font-weight: bold;
-        }
-
-        .map-placeholder {
-            height: 400px;
-            background: 
-                /* Motif Ndop en damier */
-                linear-gradient(45deg, #e8e2d1 25%, transparent 25%, transparent 75%, #e8e2d1 75%, #e8e2d1),
-                linear-gradient(45deg, #e8e2d1 25%, transparent 25%, transparent 75%, #e8e2d1 75%, #e8e2d1);
-            background-size: 40px 40px;
-            background-position: 0 0, 20px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--ndop-brown);
-            font-size: 1.2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .map-placeholder i {
-            font-size: 4rem;
-            color: var(--ndop-burgundy);
-            margin-bottom: 1rem;
-            display: block;
-            z-index: 2;
-        }
-
-        .map-info {
-            padding: 2rem;
-            background: linear-gradient(to bottom, #f8f4e9, #fff);
-            border-top: 1px solid #eee;
-        }
-
-        .location-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            background: var(--ndop-white);
-            border-radius: 10px;
-            border-left: 4px solid var(--ndop-indigo);
-            transition: all 0.3s;
-        }
-
-        .location-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .location-item i {
-            color: var(--ndop-burgundy);
-            font-size: 1.5rem;
-            margin-top: 5px;
-            flex-shrink: 0;
-        }
-
-        .location-text strong {
-            color: var(--ndop-brown);
-            font-size: 1.1rem;
-            display: block;
-            margin-bottom: 0.3rem;
         }
 
         /* Footer avec motifs Ndop */
@@ -702,6 +743,7 @@
             .card { padding: 2rem; }
             .partners-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
             .banner-text { font-size: 1.3rem; padding: 2rem; }
+            .localisation-placeholder { height: 300px; }
         }
 
         @media (max-width: 576px) {
@@ -712,7 +754,6 @@
             .card { padding: 1.5rem; }
             .timeline:before { left: 30px; }
             .timeline-item { width: calc(100% - 60px); margin-left: 60px !important; }
-            .map-placeholder { height: 300px; }
             .footer-logo { font-size: 2rem; }
         }
     </style>
@@ -734,13 +775,16 @@
                 <li><a href="#partenaires">Engagements</a></li>
                 <li><a href="#programme">Programme</a></li>
                 <li><a href="#temoignages">Témoignages</a></li>
-                <li><a href="#carte">Lieux</a></li>
+                <li><a href="#localisation">Lieux</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- En-tête -->
     <header id="accueil">
+        <div class="header-background" id="headerBackground">
+            <!-- Les images seront chargées dynamiquement par JavaScript -->
+        </div>
         <div class="header-content">
             <h1>Maman Toussi Berthe</h1>
             <div class="dates">02 Juillet 1955 – 16 Novembre 2025</div>
@@ -986,23 +1030,29 @@
         </div>
     </section>
 
-    <!-- Carte des Lieux -->
-    <section id="carte">
+    <!-- Localisation avec l'image du programme -->
+    <section id="localisation">
         <div class="section-title">
-            <h2><i class="fas fa-map-marked-alt" aria-hidden="true"></i> Lieux des Obsèques</h2>
+            <h2><i class="fas fa-map-marked-alt" aria-hidden="true"></i> Lieux et Localisation</h2>
         </div>
-        <div class="map-container">
-            <div class="map-header">
-                <i class="fas fa-map-pin" aria-hidden="true"></i> Carte des Lieux – Bafoussam, Kamkouop
+        
+        <div class="localisation-container">
+            <div class="localisation-header">
+                <i class="fas fa-map-pin" aria-hidden="true"></i> Programme et Localisation – Bafoussam, Kamkouop
             </div>
-            <div class="map-placeholder">
-                <div style="text-align: center; z-index: 2;">
-                    <i class="fas fa-map" aria-hidden="true"></i>
-                    <p>Carte de Bafoussam – Kamkouop</p>
-                    <small>Localisation des lieux des obsèques</small>
+            
+            <div class="localisation-image" id="programmeImage">
+                <!-- Placeholder qui sera remplacé par l'image -->
+                <div class="localisation-placeholder">
+                    <div style="text-align: center; z-index: 2;">
+                        <i class="fas fa-map" aria-hidden="true"></i>
+                        <p>Image du programme de localisation</p>
+                        <small>Cliquez pour afficher l'image du programme</small>
+                    </div>
                 </div>
             </div>
-            <div class="map-info">
+            
+            <div class="localisation-info">
                 <div class="location-item">
                     <i class="fas fa-hospital" aria-hidden="true"></i>
                     <div class="location-text">
@@ -1070,24 +1120,126 @@
     </footer>
 
     <script>
+        // Configuration des images hors ligne
+        const imageConfig = {
+            // Images pour l'en-tête (carrousel)
+            headerImages: [
+                {
+                    name: "Maman Toussi portrait",
+                    url: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI5MDAiIHZpZXdCb3g9IjAgMCAxNjAwIDkwMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iOTAwIiBmaWxsPSIjMEEyMzQyIi8+CjxwYXRoIGQ9Ik0wIDBMODAwIDBMNjAwIDkwMEgwVjBaIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXIpIiBmaWxsLW9wYWNpdHk9IjAuMyIvPgo8cGF0aCBkPSJNMTYwMCAwTDgwMCAwTDEwMDAgOTAwTDE2MDAgMFoiIGZpbGw9InVybCgjcGFpbnQxX2xpbmVhcikiIGZpbGwtb3BhY2l0eT0iMC4zIi8+CjxjaXJjbGUgY3g9IjgwMCIgY3k9IjQ1MCIgcj0iMjAwIiBmaWxsPSJ1cmwoI3BhaW50Ml9yYWRpYWwpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MF9saW5lYXIiIHgxPSIwIiB5MT0iMCIgeDI9IjgwMCIgeTI9IjkwMCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjRDQhRjM3Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzhCMDAwMCIvPgo8L2xpbmVhckdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MV9saW5lYXIiIHgxPSIxNjAwIiB5MT0iMCIgeDI9IjgwMCIgeTI9IjkwMCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjNUQ0MDM3Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzhCMzU1MCIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmFkaWFsR3JhZGllbnQgaWQ9InBhaW50Ml9yYWRpYWwiIGN4PSIwIiBjeT0iMCIgcj0iMSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoODAwIDQ1MCkgcm90YXRlKDkwKSBzY2FsZSgyMDApIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0RGQ0I5NSIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNGNUYxRTYiIHN0b3Atb3BhY2l0eT0iMC41Ii8+CjwvcmFkaWFsR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+",
+                    description: "Portrait symbolique de Maman Toussi Berthe"
+                },
+                {
+                    name: "Famille et tradition",
+                    url: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI5MDAiIHZpZXdCb3g9IjAgMCAxNjAwIDkwMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iOTAwIiBmaWxsPSIjNUQ0MDM3Ii8+CjxyZWN0IHg9IjIwMCIgeT0iMTUwIiB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNGNUYxRTYiIHJ4PSI1MCIvPgo8Y2lyY2xlIGN4PSI4MDAiIGN5PSI0NTAiIHI9IjE1MCIgZmlsbD0iI0Q0QUYzNyIvPgo8cGF0aCBkPSJNNzAwIDMwMEM3MDAgMjY1LjQ4IDcxNS4yNDggMjMyLjI0IDc0Mi4wNTggMjA1LjQyMkM3NjguODY4IDE3OC42MDQgODA1LjA0NCAxNjAgODQ0IDE2MEM4ODIuOTU2IDE2MCA5MTkuMTMyIDE3OC42MDQgOTQ1Ljk0MiAyMDUuNDIyQzk3Mi43NTIgMjMyLjI0IDk4OCAyNjUuNDggOTg4IDMwMEM5ODggMzQ0LjQxMiA5NTYuNDE2IDM4MCA5MTYuMzc2IDM4MEg3NzEuNjI0QzczMS41ODQgMzgwIDcwMCAzNDQuNDEyIDcwMCAzMDBaIiBmaWxsPSIjOEMwMDAwIiBmaWxsLW9wYWNpdHk9IjAuNyIvPgo8cGF0aCBkPSJNNzIwIDYwMEw4ODAgNjAwIiBzdHJva2U9IiNGNUYxRTYiIHN0cm9rZS13aWR0aD0iMjAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4=",
+                    description: "Représentation familiale et tradition"
+                },
+                {
+                    name: "Éducation et enseignement",
+                    url: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI5MDAiIHZpZXdCb3g9IjAgMCAxNjAwIDkwMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iOTAwIiBmaWxsPSIjMEEyMzQyIi8+CjxyZWN0IHg9IjQwMCIgeT0iMjAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI0Y1RjFFNiIgcng9IjQwIi8+CjxwYXRoIGQ9Ik01MDAgMzUwTDcwMCAzNTBMNzAwIDUwMEw1MDAgNTAwTDUwMCAzNTBaIiBmaWxsPSIjRDRBRjM3Ii8+CjxwYXRoIGQ9Ik05MDAgMzUwTDExMDAgMzUwTDExMDAgNTAwTDkwMCA1MDBMOTAwIDM1MFoiIGZpbGw9IiM4QjAwMDAiLz4KPGNpcmNsZSBjeD0iODAwIiBjeT0iNDI1IiByPSI3NSIgZmlsbD0iIzVENDAzNyIvPgo8cGF0aCBkPSJNNzI1IDQyNUw3NTAgNDAwTDc3NSA0MjVMODAwIDQwMEw4MjUgNDI1TDg1MCA0MDBMODc1IDQyNUw5MDAgNDAwIiBzdHJva2U9IiNGNUYxRTYiIHN0cm9rZS13aWR0aD0iMTAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4=",
+                    description: "Symbolisme de l'éducation et l'enseignement"
+                }
+            ],
+            
+            // Image du programme (base64 encodée - à remplacer par votre image réelle)
+            programmeImage: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI4MDAiIHZpZXdCb3g9IjAgMCAxMjAwIDgwMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iODAwIiBmaWxsPSIjRjVGMEU1IiByeD0iMjAiLz4KPHJlY3QgeD0iNTAiIHk9IjUwIiB3aWR0aD0iMTEwMCIgaGVpZ2h0PSI3MDAiIGZpbGw9IndoaXRlIiByeD0iMTUiLz4KPHRleHQgeD0iNjAwIiB5PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIzMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwMEIzODMiPlBST0dSQU1NRTwvdGV4dD4KPHRleHQgeD0iNjAwIiB5PSIxNDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzhCMDAwMCI+VmVuZHJlZGkgMjYgZMOpY2VtYnJlIDIwMjU8L3RleHQ+Cjx0ZXh0IHg9IjEwMCIgeT0iMjAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9ImJsYWNrIj4KICA8dHNwYW4gZm9udC13ZWlnaHQ9ImJvbGQiPjEzSDwvdHNwYW4+MDDigJMgbGV2w6llIGRlIGNvcnBzCiAgPGJyLz48YnIvPjx0c3BhbiBmb250LXdlaWdodD0iYm9sZCI+MTRIwqA8L3RzcGFuPjAwIOKAlCBNZXNzZSDDoCBMJ8OpZ2xpc2UgTWFyaWUgcmVpbmUgZGVzIGFww7R0cmVzCiAgPGJyLz48YnIvPjx0c3BhbiBmb250LXdlaWdodD0iYm9sZCI+MjBIMDwvdHNwYW4+MDDigJMgbWVzc2Ugw6Agc29uIGRvbWljaWxlCiAgPGJyLz48YnIvPjx0c3BhbiBmb250LXdlaWdodD0iYm9sZCI+VmVuYW50IGRlIEJBTU9VR09VTTwvdHNwYW4+CiAgPGJyLz48YnIvPjx0c3BhbiBmb250LXdlaWdodD0iYm9sZCI+VmVuYW50IEJBUE9VU1NBTTwvdHNwYW4+CiAgPGJyLz48YnIvPjx0c3BhbiBmb250LXdlaWdodD0iYm9sZCI+U2F2b25uZXJpZSBTQ1M8L3RzcGFuPgogIDxici8+PGJyLz48dHNwYW4gZm9udC13ZWlnaHQ9ImJvbGQiPkhvdGVsIGxlIFBBUkFESVM8L3RzcGFuPgogIDxici8+PGJyLz48dHNwYW4gZm9udC13ZWlnaHQ9ImJvbGQiPsOpZ2xpc2UgY2F0aG9saXF1ZTwvdHNwYW4+CiA8YnIvPjx0c3BhbiBmb250LXdlaWdodD0iYm9sZCI+TWFyaWUgcmVpbmUgZGVzIGFww7R0cmVzPC90c3Bhbj4KPC90ZXh0Pgo8L3N2Zz4="
+        };
+
+        // Fonction pour créer le carrousel d'images dans l'en-tête
+        function createHeaderCarousel() {
+            const headerBg = document.getElementById('headerBackground');
+            
+            if (!headerBg) return;
+            
+            // Créer les éléments image
+            imageConfig.headerImages.forEach((img, index) => {
+                const imgElement = document.createElement('img');
+                imgElement.className = 'header-bg-image';
+                imgElement.src = img.url;
+                imgElement.alt = img.description;
+                imgElement.style.opacity = index === 0 ? '0.4' : '0';
+                imgElement.style.transition = 'opacity 1.5s ease-in-out';
+                imgElement.setAttribute('data-index', index);
+                
+                headerBg.appendChild(imgElement);
+            });
+            
+            // Démarrer le carrousel
+            startCarousel();
+        }
+
+        // Fonction pour gérer le carrousel
+        function startCarousel() {
+            const images = document.querySelectorAll('.header-bg-image');
+            let currentIndex = 0;
+            
+            if (images.length === 0) return;
+            
+            // Fonction pour changer d'image
+            function changeImage() {
+                // Cacher toutes les images
+                images.forEach(img => {
+                    img.style.opacity = '0';
+                });
+                
+                // Afficher l'image suivante
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].style.opacity = '0.4';
+            }
+            
+            // Changer d'image toutes les 8 secondes
+            setInterval(changeImage, 8000);
+            
+            // Initialiser avec la première image
+            images[0].style.opacity = '0.4';
+        }
+
+        // Fonction pour charger l'image du programme
+        function loadProgrammeImage() {
+            const programmeImageContainer = document.getElementById('programmeImage');
+            
+            if (!programmeImageContainer) return;
+            
+            // Créer l'élément image
+            const imgElement = document.createElement('img');
+            imgElement.src = imageConfig.programmeImage;
+            imgElement.alt = "Programme des obsèques de Maman Toussi Berthe - 26-27 Décembre 2025";
+            imgElement.style.width = '100%';
+            imgElement.style.height = '100%';
+            imgElement.style.objectFit = 'contain';
+            imgElement.style.display = 'none'; // Caché initialement
+            
+            // Remplacer le placeholder par l'image
+            programmeImageContainer.innerHTML = '';
+            programmeImageContainer.appendChild(imgElement);
+            
+            // Ajouter un effet de chargement
+            setTimeout(() => {
+                imgElement.style.display = 'block';
+                imgElement.style.animation = 'fadeIn 1s ease-out';
+            }, 500);
+        }
+
         // Menu mobile
         const menuBtn = document.getElementById('menuBtn');
         const navLinks = document.getElementById('navLinks');
 
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            menuBtn.innerHTML = navLinks.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-
-        // Fermer le menu en cliquant sur un lien
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        if (menuBtn && navLinks) {
+            menuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                menuBtn.innerHTML = navLinks.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
             });
-        });
+
+            // Fermer le menu en cliquant sur un lien
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+        }
 
         // Navigation fluide
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1150,8 +1302,15 @@
             observer.observe(el);
         });
 
-        // Initialiser le lien actif au chargement
+        // Initialiser le site
         document.addEventListener('DOMContentLoaded', () => {
+            // Créer le carrousel d'images dans l'en-tête
+            createHeaderCarousel();
+            
+            // Charger l'image du programme
+            loadProgrammeImage();
+            
+            // Initialiser le lien actif
             const navLinks = document.querySelectorAll('.nav-links a');
             if(window.location.hash) {
                 navLinks.forEach(link => {
@@ -1161,7 +1320,41 @@
                     }
                 });
             }
+            
+            // Ajouter une animation CSS pour le fadeIn
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeIn {
+                    from { opacity: 0; }
+                    to { opacity: 1; }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            console.log('Site hommage chargé avec succès en mode hors ligne');
         });
+
+        // Gestionnaire d'erreurs pour les images
+        window.addEventListener('error', function(e) {
+            if (e.target.tagName === 'IMG') {
+                console.warn('Image non chargée:', e.target.src);
+                e.target.style.display = 'none';
+                
+                // Afficher un placeholder si c'est l'image du programme
+                if (e.target.parentElement.id === 'programmeImage') {
+                    const placeholder = document.createElement('div');
+                    placeholder.className = 'localisation-placeholder';
+                    placeholder.innerHTML = `
+                        <div style="text-align: center; z-index: 2;">
+                            <i class="fas fa-map" aria-hidden="true"></i>
+                            <p>Image du programme non disponible</p>
+                            <small>Consultez le programme ci-dessus</small>
+                        </div>
+                    `;
+                    e.target.parentElement.appendChild(placeholder);
+                }
+            }
+        }, true);
     </script>
 </body>
 </html>
